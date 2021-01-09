@@ -4,21 +4,34 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class GraphTest {
+	
+    Edge edge ;
+	
+	Vertex vertexU;
+	
+	Vertex vertexV;
+	
+	Graph graph;
+	
+	@Before
+	public void init(){
+		
+	edge = new Edge();
+	
+	vertexU = new Vertex("u".charAt(0));
+	
+	vertexV = new Vertex("v".charAt(0));
+	
+	graph = new Graph();
+	}
 
 	
 	@Test
 	public void insertEdgeTest() {
-		
-		Edge edge = new Edge();
-		
-		Vertex vertexU = new Vertex("u".charAt(0));
-		
-		Vertex vertexV = new Vertex("v".charAt(0));
-		
-		Graph graph = new Graph();
 		
 		assertEquals(edge,graph.insertEdge(edge, vertexU, vertexV));
 		
@@ -27,32 +40,15 @@ public class GraphTest {
 	@Test
 	public void insertEdgeExceptionTest(){
 		
-		Edge edge = new Edge();
-		
-		Vertex vertexU = new Vertex("u".charAt(0));
-		
-		Vertex vertexV = new Vertex("v".charAt(0));
-		
-		Graph graph = new Graph();
-		
 		graph.insertEdge(edge, vertexU, vertexV);
-		
+			
 		assertThrows(IllegalArgumentException.class,() ->graph.insertEdge(edge, vertexU, vertexV));
-		
 		
 	}
 	
 	@Test
 	public void getEdgeTest(){
-		
-		Edge edge = new Edge();
-		
-		Vertex vertexU = new Vertex("u".charAt(0));
-		
-		Vertex vertexV = new Vertex("v".charAt(0));
-		
-		Graph graph = new Graph();
-		
+			
 		graph.insertEdge(edge, vertexU, vertexV);
 		
 		assertEquals(edge, graph.getEdge(vertexU, vertexV));
@@ -62,10 +58,6 @@ public class GraphTest {
 	
 	@Test
 	public void getEdgeNullTest(){
-		
-		Vertex vertexU = new Vertex("u".charAt(0));
-		
-		Vertex vertexV = new Vertex("v".charAt(0));
 		
 		Vertex vertexA = new Vertex("a".charAt(0));
 		

@@ -327,15 +327,12 @@ public class Project {
 		System.out.print(totalLength);
 		
 		//display all found deadends
-		System.out.print("\n\t\tFound deadends: ");
+		System.out.print("\n\t\tDeadends found: ");
 		if (deadEnds.isEmpty()) {System.out.println("None");}
 		else {
 			for (Vertex v : deadEnds) {
 			System.out.print(v.getName() + ", ");
 			}}
-		
-			
-			
 		
 	}
 	

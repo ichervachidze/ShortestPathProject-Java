@@ -494,5 +494,6 @@ public class Project {
 			System.exit(1);
 		}
 		return passed;
+//		return true;
 	}
 }
